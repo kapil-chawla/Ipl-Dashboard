@@ -3,6 +3,7 @@ package com.kapcha.ipldashboard.controller;
 import com.kapcha.ipldashboard.model.Team;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.kapcha.ipldashboard.model.Match;
@@ -41,5 +42,13 @@ public class TeamController {
         LocalDate startDate = LocalDate.of(year, 1, 1);
         LocalDate endDate = LocalDate.of(year+1, 1, 1);
         return this.matchRepository.getMatchesByTeamBetweeDates(teamName, startDate, endDate);
+    }
+
+    @GetMapping("/team-names")
+    public List<String> getTeamNames(){
+        List<String> teamNames = new ArrayList<>();
+        Iterable<Team> teams = this.teamRepository.findAll();
+        teams.forEach(team -> teamNames.add(team.getTeamName()));
+        return teamNames;
     }
 }

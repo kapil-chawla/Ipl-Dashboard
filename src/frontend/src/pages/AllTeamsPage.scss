@@ -1,0 +1,15 @@
+.AllTeamsPage{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    margin-top: 10px;
+
+    span {
+        padding-bottom: 50px;
+        padding-top: 10px;
+        text-align: center;
+        box-shadow: 5px;
+        border:1px solid lightgray;
+    }
+}
