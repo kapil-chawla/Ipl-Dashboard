@@ -13,15 +13,13 @@ export const AllTeamsPage = () => {
     },[]);
     
     return (
-        <>
-        <h1 style={{textAlign:'center'}}>Ipl Dashboard</h1>
         <div className="AllTeamsPage">
             {
                 teams.length >0 ?
                 teams.map(
                 team => 
                     (
-                        <span>
+                        <span key={team.id}>
                             <h3><Link to={ `/teams/${team} `}>{team}</Link></h3>
                         </span>
                     )
@@ -29,6 +27,5 @@ export const AllTeamsPage = () => {
 
             }
         </div>
-        </>
     )
 }

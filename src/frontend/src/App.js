@@ -4,10 +4,12 @@ import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import { MatchPage } from './pages/MatchPage';
 import { AllTeamsPage } from './pages/AllTeamsPage';
 import { NoMatch } from './pages/NoMatch';
+import { IplNavbar } from './components/IplNavbar'; 
 
 function App() {
   return (
     <div className="App">
+      <IplNavbar />
       <Router>
         <Switch>
           <Route path="/teams/:teamName/matches/:year" exact>

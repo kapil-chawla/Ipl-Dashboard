@@ -28,7 +28,7 @@ export const MatchPage = () => {
                 <h1>{teamName} matches for {year}</h1>
                 {
                     matches.length>0 ?
-                    matches.map(match => <MatchDetailCard teamName={teamName} match={match} />)
+                    matches.map(match => <MatchDetailCard key={match.id} teamName={teamName} match={match} />)
                     : "No Match Found"
                 }
             </div>
